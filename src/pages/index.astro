@@ -14,7 +14,7 @@ const blogEntries = await getCollection("work")
     {
       blogEntries.map(item => {
         return (
-          <li class="py-[.4em]  w-full ">
+          <li class="py-[.4em] w-full hover:underline ">
             <a href={item.slug} class="flex justify-between">
               <h2 class="">{item.data.title}</h2>
               <div class="flex md:w-2/3 ">
