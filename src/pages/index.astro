@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content"
+import Layout from "../layouts/PageLayout.astro"
+import Section from "../components/Section.astro"
+
+const blogEntries = await getCollection("work")
+---
+
+<Layout title="Home">
+  <Section>
+    hello
+    <div class="px-gx">
+      {
+        blogEntries.map(item => {
+          return (
+            <div>
+              <a href={item.slug}>Project</a>
+              {item.data.title}
+              <img
+                class="h-[10vh]"
+                src={item.data.img}
+                alt={item.data.imgAlt}
+              />
+            </div>
+          )
+        })
+      }
+    </div>
+  </Section>
+</Layout>

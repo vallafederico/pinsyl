@@ -1,0 +1,8 @@
+---
+const { cn } = Astro.props;
+const classes = cn ? "py-gy" + " " + cn : "py-gy";
+---
+
+<section class={classes}>
+  <slot />
+</section>

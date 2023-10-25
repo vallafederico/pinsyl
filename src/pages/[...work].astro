@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content"
+
+import Layout from "../layouts/PageLayout.astro"
+import Section from "src/components/Section.astro"
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("work")
+
+  return blogEntries.map(entry => ({
+    params: { work: entry.slug },
+    props: { entry },
+  }))
+}
+
+const { data } = Astro.props.entry
+// console.log(data) // title | slug | year | type | role | url | audio | desc
+---
+
+<Layout title="Home">
+  <Section>
+    <div class="px-gx">
+      <p>{data.title}</p>
+      <p>{data.year}</p>
+      <p>{data.type}</p>
+      <p>{data.role}</p>
+      <p>{data.url}</p>
+      <p>{data.audio}</p>
+      <p>{data.desc}</p>
+    </div>
+    <div class="px-gx">
+      <img src={data.img} alt={data.imgAlt} />
+    </div>
+  </Section>
+</Layout>
