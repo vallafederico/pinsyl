@@ -1,6 +1,7 @@
 import { Text } from "./animation/text"
 // import { Track } from "../util/track";
 // import { Alpha } from "./animation/alpha";
+import Tween from "gsap"
 
 export class Dom {
   constructor() {
@@ -38,9 +39,12 @@ export class Dom {
     // console.log("DOM::transitionOut", page);
 
     return new Promise(resolve => {
-      setTimeout(() => {
-        resolve()
-      }, 100)
+      Tween.to(page.parentElement, {
+        autoAlpha: 0,
+        duration: 0.2,
+        ease: "slow.out",
+        onComplete: resolve,
+      })
     })
   }
 
@@ -48,9 +52,14 @@ export class Dom {
     // console.log("DOM::transitionIn", page);
 
     return new Promise(resolve => {
-      setTimeout(() => {
-        resolve()
-      }, 100)
+      Tween.to(page.parentElement, {
+        autoAlpha: 1,
+        duration: 0.8,
+        ease: "expo.out",
+        onComplete: resolve,
+      })
+
+      // resolve()
     })
   }
 }

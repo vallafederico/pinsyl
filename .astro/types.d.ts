@@ -144,13 +144,6 @@ declare module 'astro:content' {
   collection: "work",
   data: any
 } & { render(): Render[".md"] },
-"test.md": {
-  id: "test.md",
-  slug: "hypervision",
-  body: string,
-  collection: "work",
-  data: any
-} & { render(): Render[".md"] },
 "unoaerre.md": {
   id: "unoaerre.md",
   slug: "unoaerre",

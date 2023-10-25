@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content"
 
 import Layout from "../layouts/PageLayout.astro"
-import Section from "src/components/Section.astro"
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("work")
@@ -18,18 +17,38 @@ const { data } = Astro.props.entry
 ---
 
 <Layout title="Home">
-  <Section>
-    <div class="px-gx">
-      <p>{data.title}</p>
+  <section class="px-gx pt-gy flex justify-end">
+    <a class="underline" href="/">HOME</a>
+  </section>
+  <section class="px-gx py-gy">
+    <h1 class="text-xl">{data.title}</h1>
+
+    <div class="flex gap-2 py-2">
       <p>{data.year}</p>
       <p>{data.type}</p>
-      <p>{data.role}</p>
-      <p>{data.url}</p>
-      <p>{data.audio}</p>
+    </div>
+
+    <p>{data.role}</p>
+
+    <div class="py-gy max-w-[60ch] leading-5">
       <p>{data.desc}</p>
     </div>
+
+    <div class="flex gap-8">
+      {
+        data.client && (
+          <a class="underline" target="_blank" href={data.clientUrl}>
+            {data.client}
+          </a>
+        )
+      }
+
+      <a class="underline" target="_blank" href={data.url}>LIVE PROJECT</a>
+    </div>
+  </section>
+  <section>
     <div class="px-gx">
       <img src={data.img} alt={data.imgAlt} />
     </div>
-  </Section>
+  </section>
 </Layout>
