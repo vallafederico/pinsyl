@@ -9,7 +9,7 @@ role: Music Production / Sound Design
 client:
 clientUrl:
 
-url: https://www.instagram.com/p/CZPcOTih33v/
+url: https://www.instagram.com/p/CZM8vJnKimX/
 
 audio: null
 
@@ -17,7 +17,8 @@ img: "/work/graziaxgucci/main-img.png"
 imgAlt: ""
 video: null
 
-desc: ""
+desc: "Music production and sound design.
+Video: Michele Giannantonio @chocopopper "
 ---
 
 # Hi there!

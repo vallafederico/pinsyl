@@ -18,17 +18,17 @@ const { data } = Astro.props.entry
 
 <Layout title="Home">
   <section class="px-gx pt-gy flex justify-end">
-    <a class="underline" href="/">HOME</a>
+    <a class="underline" href="/">home</a>
   </section>
   <section class="px-gx py-gy">
     <h1 class="text-xl">{data.title}</h1>
 
     <div class="flex gap-2 py-2">
       <p>{data.year}</p>
-      <p>{data.type}</p>
+      <p class="lowercase">{data.type}</p>
     </div>
 
-    <p>{data.role}</p>
+    <p class="lowercase">{data.role}</p>
 
     <div class="py-gy max-w-[60ch] leading-5">
       <p>{data.desc}</p>
@@ -43,10 +43,10 @@ const { data } = Astro.props.entry
         )
       }
 
-      <a class="underline" target="_blank" href={data.url}>LIVE PROJECT</a>
+      <a class="underline" target="_blank" href={data.url}>live project</a>
     </div>
   </section>
-  <section>
+  <section class="pb-5">
     <div class="px-gx">
       <img src={data.img} alt={data.imgAlt} />
     </div>

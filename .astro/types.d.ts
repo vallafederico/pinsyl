@@ -102,6 +102,13 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"work": {
+"alessandrarich.md": {
+  id: "alessandrarich.md",
+  slug: "alessandrarich",
+  body: string,
+  collection: "work",
+  data: any
+} & { render(): Render[".md"] },
 "argento935.md": {
   id: "argento935.md",
   slug: "argento935",
@@ -112,6 +119,20 @@ declare module 'astro:content' {
 "bedtimestories.md": {
   id: "bedtimestories.md",
   slug: "bedtimestories",
+  body: string,
+  collection: "work",
+  data: any
+} & { render(): Render[".md"] },
+"ciudad-lineal.md": {
+  id: "ciudad-lineal.md",
+  slug: "ciudad-lineal",
+  body: string,
+  collection: "work",
+  data: any
+} & { render(): Render[".md"] },
+"ghd.md": {
+  id: "ghd.md",
+  slug: "ghd",
   body: string,
   collection: "work",
   data: any
@@ -130,16 +151,16 @@ declare module 'astro:content' {
   collection: "work",
   data: any
 } & { render(): Render[".md"] },
-"mandirii.md": {
-  id: "mandirii.md",
-  slug: "mandirii",
+"intornolabs.md": {
+  id: "intornolabs.md",
+  slug: "intornolabs",
   body: string,
   collection: "work",
   data: any
 } & { render(): Render[".md"] },
-"sulbaldo.md": {
-  id: "sulbaldo.md",
-  slug: "sulbaldo",
+"museo-altrove.md": {
+  id: "museo-altrove.md",
+  slug: "museo-altrove",
   body: string,
   collection: "work",
   data: any
